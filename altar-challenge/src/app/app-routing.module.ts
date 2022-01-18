@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
-import { GeneratorComponent } from './generator/generator.component';
-import { PaymentsComponent } from './payments/payments.component';
+import { GeneratorComponent } from './components/generator/generator.component';
+import { PaymentsComponent } from './components/payments/payments.component';
 
 const routes: Routes = [
   {path: '', component: AppComponent},
