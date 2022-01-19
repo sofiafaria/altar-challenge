@@ -6,30 +6,29 @@
     </div>
 </div>
 <div class="row">
-    <form [formGroup]="charForm" (ngSubmit)="generate2DGrid()">
-        <fieldset>
-          <div class="form-group">
-            <label for="userChar" class="form-label mt-4">Character</label>
-            <input type="text" name="userChar" class="form-control" id="userChar" formControlName="userChar" placeholder="Enter character">
-          </div>
-          <div class="form-group">
-            <app-clock></app-clock>
-          </div>
-        </fieldset>
-        <button type="submit" class="btn btn-primary">GENERATE 2D GRID</button>
-    </form>
+    <div class="form-group">
+        <label for="userChar" class="form-label mt-4">Character</label>
+        <input type="text" maxlength="1" name="userChar" class="form-control" [value]="userChar" (keyup)="onCharInput($event)" placeholder="Enter character">
+    </div>
+        <div class="form-group">
+        <app-clock></app-clock>
+    </div>
+    <div class="switch">
+        <span>GENERATE 2D GRID</span>
+        <input type="checkbox" [checked]="generate$" (change)='onToggleGenerator()' class="btn btn-primary">
+    </div>
 </div>
 <div class="row">
     <div class="container">
         <div class="row" *ngFor="let row of headers">
             <div class="col">{{row}}</div>
             <div class="col" *ngFor="let column of headers">
-                {{cells[row][column]}}
+                {{currentCodeMatrix.matrix[row][column]}}
             </div>
         </div>
     </div>
 </div>
-<app-live-code [code]="code"></app-live-code>
+<app-live-code [code] = "(currentCodeMatrix$ | async).code"></app-live-code>
 
 
 

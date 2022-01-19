@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LiveCodeComponent implements OnInit {
 
-  @Input() code ='';
+  @Input() code :string= '';
 
   constructor() { }
 

@@ -6,9 +6,9 @@ import { GeneratorComponent } from './components/generator/generator.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
   {path: 'generator', component: GeneratorComponent},
-  {path: 'payments', component: PaymentsComponent}
+  {path: 'payments', component: PaymentsComponent},
+  {path: '', redirectTo: '/generator', pathMatch: 'full'},
 ];
 
 @NgModule({

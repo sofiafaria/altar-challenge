@@ -8,10 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { GeneratorComponent } from './components/generator/generator.component';
 import { PaymentsComponent } from './components/payments/payments.component';
-import { ClockComponent } from './components/clock/clock.component';
-import { PaymentsFormComponent } from './components/payments-form/payments-form.component';
-import { PaymentsTableComponent } from './components/payments-table/payments-table.component';
 import { LiveCodeComponent } from './components/live-code/live-code.component';
+import { ClockComponent } from './components/clock/clock.component';
 
 import { CodeService } from './services/code.service';
 
@@ -21,8 +19,6 @@ import { CodeService } from './services/code.service';
     GeneratorComponent,
     PaymentsComponent,
     ClockComponent,
-    PaymentsFormComponent,
-    PaymentsTableComponent,
     LiveCodeComponent
   ],
   imports: [
