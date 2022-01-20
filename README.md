@@ -1,3 +1,9 @@
+# How to set up this project
+1 - Clone it
+2 - npm install
+3 - we are using the json-server to simulate an api, but keeping all the payments saved to a db.json file. You should run json-server --watch db.json
+4 - ng serve and ready to go!
+
 # Altar.io Angular FrontEnd Exercise 0619 (Do not fork)
 The candidate should write the solution using Angular framework and it's free to use any patterns, methodologies and styling language.
 You will be creating 2 pages with a couple of interactive widgets. 
