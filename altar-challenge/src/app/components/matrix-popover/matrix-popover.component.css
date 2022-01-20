@@ -1,0 +1,9 @@
+.small-grid{
+    font-size: smaller;
+    letter-spacing: 0.1em;
+}
+
+
+:host >>> .popover {
+    max-width: 350px;
+}

@@ -1,34 +1,56 @@
-<div class="row mt-4 mb-4">
-    <div class="col">
+<div class="row mt-4">
+    <div class="col-lg-12">
         <div class="page-header">
             <h1>Generator</h1>
+            <div class="d-flex flex-row-reverse">
+                <button
+                  type="button"
+                  class="btn btn-link"
+                  [routerLink]="['/payments']"
+                  routerLinkActive="router-link-active"
+                  routerLinkActive="router-link-active"
+                >
+                  Go to Payments
+                </button>
+              </div>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="form-group">
-        <label for="userChar" class="form-label mt-4">Character</label>
-        <input type="text" maxlength="1" name="userChar" class="form-control" [value]="userChar" (keyup)="onCharInput($event)" placeholder="Enter character">
-    </div>
-        <div class="form-group">
-        <app-clock></app-clock>
-    </div>
-    <div class="switch">
-        <span>GENERATE 2D GRID</span>
-        <input type="checkbox" [checked]="generate$" (change)='onToggleGenerator()' class="btn btn-primary">
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-lg-4 form-group">
+            <label for="userChar" class="form-label">Character</label>
+            <input type="text" maxlength="1" name="userChar" class="form-control" [value]="userChar" (keyup)="onCharInput($event)" placeholder="Enter character">
+        </div>
+        <div class="col-lg-4 form-group text-center">
+            <app-clock></app-clock>
+        </div>
+        <div class="col-lg-4 toggle-button">
+            <label>
+            <span>GENERATE 2D GRID</span>
+            <input type="checkbox" [checked]="generate$" (change)='onToggleGenerator()'>
+        </label>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="container">
-        <div class="row" *ngFor="let row of headers">
-            <div class="col">{{row}}</div>
-            <div class="col" *ngFor="let column of headers">
-                {{currentCodeMatrix.matrix[row][column]}}
+<div class="container">
+    <div class="row mt-4 ">
+        <div class="container grid">
+            <div class="row" *ngFor="let row of headers">
+                <div class="col">{{row}}</div>
+                <div class="col" *ngFor="let column of headers">
+                    {{currentCodeMatrix.matrix[row][column]}}
+                </div>
             </div>
         </div>
     </div>
 </div>
-<app-live-code [code] = "(currentCodeMatrix$ | async).code"></app-live-code>
+<div class="container text-center">
+    <div class="row mt-4">
+        <app-live-code [code] = "(currentCodeMatrix$ | async).code"></app-live-code>
+    </div>
+</div>
+
 
 
 

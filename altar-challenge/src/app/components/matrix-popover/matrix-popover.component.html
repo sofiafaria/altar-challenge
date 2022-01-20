@@ -1,0 +1,15 @@
+<ng-template #popContent>
+  <div class="row">
+    <div class="small-grid">
+        <div class="row" *ngFor="let row of headers">
+            <div class="col-1">{{row}}</div>
+            <div class="col-1" *ngFor="let column of headers">
+                {{matrix[row][column]}}
+            </div>
+        </div>
+    </div>
+</div>
+</ng-template>
+<button type="button" class="btn btn-outline-secondary" [ngbPopover]="popContent">
+    Matrix
+  </button>

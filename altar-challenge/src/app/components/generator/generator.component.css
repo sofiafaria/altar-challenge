@@ -1,9 +1,42 @@
-.page-header{
-    display: block;
-}
-.container{
-    height: 50vh;
-    width: 50vh;
+
+.grid{
+    height: auto;
+    width: auto;
     align-items: center;
     justify-content: center;
+}
+
+.toggle-button{
+    border-radius: 4px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    float: left;
+    width: 250px; height: 100%;
+    padding: 25px;
+  }
+
+  
+  .toggle-button label span {
+    text-align: center;
+    padding: 3px 0;
+  }
+
+  .toggle-button label input {
+    position: absolute;
+    display: none;
+    color: #fff;
+  }
+
+  .toggle-button:hover{
+      background-color: #e83283;
+  }
+
+  input[type=checkbox]
+{
+  -ms-transform: scale(5); /* IE */
+  -moz-transform: scale(5); /* FF */
+  -webkit-transform: scale(5); /* Safari and Chrome */
+  -o-transform: scale(5); /* Opera */
+  transform: scale(5);
+  padding: 10px;
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,10 @@ import { LiveCodeComponent } from './components/live-code/live-code.component';
 import { ClockComponent } from './components/clock/clock.component';
 
 import { CodeService } from './services/code.service';
+import { PaymentsService } from './services/payments.service';
+import { MatrixPopoverComponent } from './components/matrix-popover/matrix-popover.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +24,17 @@ import { CodeService } from './services/code.service';
     GeneratorComponent,
     PaymentsComponent,
     ClockComponent,
-    LiveCodeComponent
+    LiveCodeComponent,
+    MatrixPopoverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [CodeService],
+  providers: [CodeService, PaymentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
